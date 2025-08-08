@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Posts</title>
+  <style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f0f2f5;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .post-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        margin-bottom: 25px;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .post-title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .post-content {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 12px;
+        text-align: justify;
+    }
+
+    .post-image {
+        display: block;
+        margin: 10px auto 20px;
+        max-width: 100%;
+        max-height: 300px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .timestamp {
+        text-align: right;
+        font-size: 13px;
+        color: #777;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a href="/students" class="back-link">&larr; Back to Student List</a>
+  <h2 style="text-align:center;">Student Posts</h2>
+
+  <div th:each="post : ${posts}" class="post-card">
+    <div class="post-title" th:text="${post.title}">Post Title</div>
+    <div class="post-content" th:text="${post.content}">Post content here...</div>
+    <div th:if="${post.fileData != null}">
+      <img th:src="@{/posts/image/{id}(id=${post.id})}" class="post-image" alt="Post Image"/>
+    </div>
+    <div class="timestamp" th:text="${#temporals.format(post.timestamp, 'dd MMM yyyy HH:mm')}">
+      29 Jul 2025 15:00
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

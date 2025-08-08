@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0d47a1, #2196f3);
+      color: #fff;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .hero-box {
+      max-width: 700px;
+      margin: 80px auto 0 auto;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 50px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-box h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    .hero-box p {
+      font-size: 1.1rem;
+      color: #e0f2f1;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .logo-icon {
+      font-size: 3rem;
+      color: #ffeb3b;
+      margin-bottom: 20px;
+    }
+
+    .btn-yellow {
+      background-color: #ffc107;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .btn-yellow:hover {
+      background-color: #ffca28;
+      color: #000;
+    }
+
+    .auth-buttons .btn {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top-right SignUp / Login buttons -->
+<div class="top-bar">
+  <div class="auth-buttons">
+    <a href="/signup" class="btn btn-outline-light"><i class="bi bi-person-plus-fill"></i> Sign Up</a>
+    <a href="/login" class="btn btn-light text-primary"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-box">
+  <div class="logo-icon">
+    <i class="bi bi-mortarboard-fill"></i>
+  </div>
+  <h1>Student Management System</h1>
+  <p>
+    Manage student records efficiently. Add, edit, and view student data in one clean and powerful interface.
+  </p>
+  <a href="/students" class="btn btn-yellow btn-lg">
+    <i class="bi bi-arrow-right-circle-fill"></i> Get Started
+  </a>
+</div>
+
+</body>
+</html>

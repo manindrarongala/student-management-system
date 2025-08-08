@@ -1,0 +1,7 @@
+com\manindra\management\Product\StudentDetails.class
+com\manindra\management\Services\StudentServices.class
+com\manindra\management\Product\Post.class
+com\manindra\management\Controller\ViewController.class
+com\manindra\management\ManagementApplication.class
+com\manindra\management\Repo\StudentRepo.class
+com\manindra\management\WebConfig.class
